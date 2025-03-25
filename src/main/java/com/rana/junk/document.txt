@@ -1,0 +1,31 @@
+Installation Zookeeper and kafka
+
+----------------------------------
+
+https://www.youtube.com/watch?v=lFox22RJE7s
+
+Path
+C:\kafka_2.13-3.2.0\bin\windows
+
+zookeeper-server-start.bat ..\..\config\zookeeper.properties
+
+kafka-server-start.bat ..\..\config\server.properties
+
+.\kafka-topics.bat --create --topic my-topic --bootstrap-server localhost:9092 --replication-factor 1 --partitions 3
+
+.\kafka-console-producer.bat --broker-list localhost:9092 --topic my-topic
+
+.\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic my-topic --from-beginning
+
+In project
+---------------------------------------
+
+Postman request- PUT request
+http://localhost:8082/location
+
+check topic created or not
+
+.\kafka-topics.bat --describe --topic cab-location-topic --bootstrap-server localhost:9092
+
+open consumer from CLI- Command line.
+.\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic cab-location-topic --from-beginning
