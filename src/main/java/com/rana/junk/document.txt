@@ -19,6 +19,8 @@ kafka-server-start.bat ..\..\config\server.properties
 
 In project
 ---------------------------------------
+Run Car_Book_Driver application
+Run Car_Book_User application
 
 Postman request- PUT request
 http://localhost:8082/location
